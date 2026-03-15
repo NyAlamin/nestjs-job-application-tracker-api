@@ -2,6 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
 export class Application {
+
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -16,4 +17,5 @@ export class Application {
 
   @Column({ nullable: true })
   notes: string;
+
 }

@@ -1,15 +1,20 @@
-import { IsNotEmpty, IsNumber } from 'class-validator';
+import { IsNotEmpty, IsNumber, Min, MaxLength } from 'class-validator';
 
 export class CreateJobDto {
-  @IsNotEmpty()
+
+  @IsNotEmpty({ message: 'Company name is required' })
+  @MaxLength(100)
   companyName: string;
 
-  @IsNotEmpty()
+  @IsNotEmpty({ message: 'Position is required' })
+  @MaxLength(100)
   position: string;
 
-  @IsNotEmpty()
+  @IsNotEmpty({ message: 'Location is required' })
   location: string;
 
   @IsNumber()
+  @Min(0, { message: 'Salary must be positive' })
   salary: number;
+
 }

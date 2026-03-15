@@ -1,7 +1,8 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
 export class Job {
+
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -14,6 +15,7 @@ export class Job {
   @Column()
   location: string;
 
-  @Column()
+  @Column('int')
   salary: number;
+
 }
